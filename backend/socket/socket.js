@@ -4,17 +4,17 @@ import express from "express";
 import Redis from 'ioredis';
 
 const pub = new Redis({
-    host: "caching-3af72f23-chatapp047-8177.i.aivencloud.com",
-    port: 19460,
-    username: "default",
-    password: "AVNS_-SmJAmPUzk5T3LwntsX"
+    host: process.env.REDIS_HOST,
+    port: process.env.REDIS_PORT,
+    username: process.env.REDIS_USERNAME,
+    password: process.env.REDIS_PASSWORD
 });
 
 const sub = new Redis({
-    host: "caching-3af72f23-chatapp047-8177.i.aivencloud.com",
-    port: 19460,
-    username: "default",
-    password: "AVNS_-SmJAmPUzk5T3LwntsX"
+    host: process.env.REDIS_HOST,
+    port: process.env.REDIS_PORT,
+    username: process.env.REDIS_USERNAME,
+    password: process.env.REDIS_PASSWORD
 });
 
 pub.on('connect', ( ) => {
