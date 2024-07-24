@@ -2,58 +2,119 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Updated Body Background */
 body {
-	background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/bg.png");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
+  background: linear-gradient(to right, rgba(34, 193, 195, 0.7), rgba(253, 187, 45, 0.7));
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-/* dark mode looking scrollbar */
+/* Dark Mode Looking Scrollbar */
 ::-webkit-scrollbar {
-	width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-	background: #555;
+  background: #444; /* Darker track for better contrast */
 }
 
 ::-webkit-scrollbar-thumb {
-	background: #121212;
-	border-radius: 5px;
+  background: #888; /* Lighter thumb color */
+  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: #242424;
+  background: #aaa; /* Change thumb color on hover */
 }
 
 /* SHAKE ANIMATION ON HORIZONTAL DIRECTION */
 .shake {
-	animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) 0.2s both;
-	transform: translate3d(0, 0, 0);
-	backface-visibility: hidden;
-	perspective: 1000px;
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) 0.2s both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 
 @keyframes shake {
-	10%,
-	90% {
-		transform: translate3d(-1px, 0, 0);
-	}
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
 
-	20%,
-	80% {
-		transform: translate3d(2px, 0, 0);
-	}
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
 
-	30%,
-	50%,
-	70% {
-		transform: translate3d(-4px, 0, 0);
-	}
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
 
-	40%,
-	60% {
-		transform: translate3d(4px, 0, 0);
-	}
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+/* Button Styles */
+button {
+  background-color: #f39c12; /* Bright Orange */
+  color: #fff; /* Text color */
+  border: none;
+  padding: 12px 24px; /* Increased padding for a better touch target */
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em; /* Responsive font size */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform for hover */
+}
+
+button:hover {
+  background-color: #e67e22; /* Darker orange on hover */
+  transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+/* Input Styles */
+input {
+  padding: 12px; /* Increased padding */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border 0.3s ease;
+  font-size: 1em; /* Responsive font size */
+}
+
+input:focus {
+  border: 1px solid #f39c12; /* Highlight border on focus */
+}
+
+/* Card Styles */
+.card {
+  background: rgba(255, 255, 255, 0.9); /* White with slight transparency */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+}
+
+/* Responsive Utilities */
+@media (max-width: 640px) {
+  .card {
+    padding: 15px; /* Reduced padding for smaller screens */
+  }
+
+  button {
+    padding: 10px 20px; /* Adjust button padding */
+  }
+
+  input {
+    padding: 10px; /* Adjust input padding */
+  }
 }

@@ -2,6 +2,11 @@ import { Server } from "socket.io";
 import http from "http";
 import express from "express";
 import Redis from 'ioredis';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+console.log(process.env.REDIS_PORT);
 
 const pub = new Redis({
     host: process.env.REDIS_HOST,
